@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess game</title>
+</head>
+<body>
+    <script>
+        
+        const n = Math.floor(Math.random()*1000);
+        while (true) {
+            const userGuess = prompt('Загадано число от 0 до 999, попробуй угадать, используя подсказки! Для выхода введи q');
+        
+            if (userGuess === 'q') {
+                break;
+            }
+            if (isNaN(userGuess) || (+userGuess > 999)) {
+                alert('Вы ввели некоректное значение!');
+            }
+            if (userGuess == n) {
+                alert('угадал!');
+            }
+
+            else if (userGuess < n) {
+                alert('больше');
+            }
+            else if (userGuess > n) {
+                alert('меньше');
+            }
+        }
+
+    </script>
+</body>
+</html>
